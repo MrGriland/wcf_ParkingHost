@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace wcf_chat
+namespace wcf_Parking
 {
     public class OrderInfo
     {

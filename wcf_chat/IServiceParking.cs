@@ -6,11 +6,11 @@ using System.ServiceModel;
 using System.Text;
 using System.Data.SqlClient;
 
-namespace wcf_chat
+namespace wcf_Parking
 {
     // ПРИМЕЧАНИЕ. Команду "Переименовать" в меню "Рефакторинг" можно использовать для одновременного изменения имени интерфейса "IServiceChat" в коде и файле конфигурации.
-    [ServiceContract(CallbackContract = typeof(IServerChatCallback))]
-    public interface IServiceChat
+    [ServiceContract(CallbackContract = typeof(IServerParkingCallback))]
+    public interface IServiceParking
     {
         [OperationContract]
         void Connect();
@@ -36,7 +36,7 @@ namespace wcf_chat
         int GetUserID(string login);
     }
 
-    public interface IServerChatCallback
+    public interface IServerParkingCallback
     {
         [OperationContract(IsOneWay = true)]
         void MsgCallback(string msg);

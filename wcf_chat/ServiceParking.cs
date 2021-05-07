@@ -7,11 +7,11 @@ using System.ServiceModel;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace wcf_chat
+namespace wcf_Parking
 {
   
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
-    public class ServiceChat : IServiceChat
+    public class ServiceParking : IServiceParking
     {
         List<OrderInfo> orderInfos = new List<OrderInfo>();
         List<string> marks = new List<string>();

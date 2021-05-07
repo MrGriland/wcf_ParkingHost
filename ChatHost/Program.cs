@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
+using wcf_Parking;
 
 namespace ChatHost
 {
@@ -26,15 +27,18 @@ namespace ChatHost
             //    "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
             //key.DeleteValue("ChatHost", false);
             //key.Close();
-            using (var host = new ServiceHost(typeof(wcf_chat.ServiceChat)))
+            using (var hostSingle = new ServiceHost(typeof(wcf_Parkingsingle.ServiceParkingSingle)))
             {
-                host.Open();
-                Console.WriteLine("Хост стартовал!");
-                while(true)
+                using (var host = new ServiceHost(typeof(wcf_Parking.ServiceParking)))
                 {
-                    string str = Console.ReadLine();
-                    if (str == "shutdown")
-                    break;
+                    host.Open();
+                    Console.WriteLine("Хост стартовал!");
+                    while (true)
+                    {
+                        string str = Console.ReadLine();
+                        if (str == "shutdown")
+                            break;
+                    }
                 }
             }
         }

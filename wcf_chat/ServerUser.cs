@@ -1,5 +1,5 @@
 ﻿using System.ServiceModel;
-namespace wcf_chat
+namespace wcf_Parking
 {
     public class ServerUser
     {
